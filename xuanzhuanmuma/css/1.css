@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+   
+  html,
+  body {
+    height: 100%;
+  }
+   
+  body {
+    overflow: hidden;
+    display: flex;
+    background: #111;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    perspective-origin: 50% ; 
+  }
+
+
+  .menu-button {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 0;
+    left: 0;
+    background: #444;
+    border-radius: 50%;
+    color: #fff;
+    line-height: 30px;
+    text-align: center;
+    speak: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .bb-custom-wrapper nav span:hover,
+  .menu-button:hover {
+    background: #000;
+  }
+  
+  /* .bb-custom-wrapper nav span:last-child {
+    left: 40px;
+  } */
+  
+  .menu-button {
+    z-index: 1000;
+    left: 20px;
+    top: 20px;
+    text-indent: -9000px;
+  }
+  
+  .menu-button:before, .menu-button:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.menu-button:after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+  #drag-container, #spin-container {
+    position: relative;
+    display: flex;
+    margin: auto;
+    transform-style: preserve-3d;
+    transform: rotateX(-20deg);  
+  }
+   
+  #drag-container img, #drag-container video {
+    transform-style: preserve-3d;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 200px;
+    font-size: 50px;
+    text-align: center;
+    box-shadow: 0 0 8px #fff;
+    -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0005);
+  }
+   
+  #drag-container img:hover, #drag-container video:hover {
+    box-shadow: 0 0 15px #fffd;
+    -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0007);
+  }
+   
+  #drag-container p {
+    font-family: Serif;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotateX(90deg);
+    color: #fff;
+  }
+   
+  #ground {
+    width: 900px;
+    height: 900px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotateX(90deg);
+    background: -webkit-radial-gradient(center center, farthest-side , #9993, transparent);
+  }
+   
+  #music-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+   
+  #carousel-container {
+    width: 100%;
+    height: 100%;
+  }
+   
+  @keyframes spin {
+    from{
+      transform: rotateY(0deg);
+    } to{
+      transform: rotateY(360deg);
+    }
+  }
+  @keyframes spinRevert {
+    from{
+      transform: rotateY(360deg);
+    } to{
+      transform: rotateY(0deg);
+    }
+  }
